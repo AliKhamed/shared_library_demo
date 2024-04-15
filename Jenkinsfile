@@ -5,7 +5,7 @@ pipeline {
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
         imageName   		    = 'ibrahimadel10/nti-app'     			// DockerHub repo/image name.
-	K8sCredentialsID	    = 'kubernetes'		    			// KubeConfig credentials ID.    
+	K8sCredentialsID	    = 'kubernetes'	    				// KubeConfig credentials ID.    
     }
     
     stages {       
@@ -39,8 +39,7 @@ pipeline {
                 script { 
                         // Navigate to the directory contains kubernetes YAML files
                 	dir('k8s') {
-				//deployOnKubernetes("${k8sCredentialsID}", "${imageName}")
-				deployOnKubernetes(k8sCredentialsID, imageName)
+				deployOnKubernetes("${k8sCredentialsID}", "${imageName}")
                     	}
                 }
             }
