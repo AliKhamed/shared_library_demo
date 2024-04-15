@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nti-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nti-website
+  template:
+    metadata:
+      labels:
+        app: nti-website
+    spec:
+      containers:
+      - name: nti-website
+        image: ibrahimadel10/NTI_website:v1
+        ports:
+        - containerPort: 8081
+        
