@@ -4,7 +4,7 @@ pipeline {
     
     environment {
         dockerHubCredentialsID	    = 'DockerHub'  		    			// DockerHub credentials ID.
-        imageName   		    = 'ibrahimadel10/NTI-app'     			// DockerHub repo/image name.
+        imageName   		    = 'ibrahimadel10/nti-app'     			// DockerHub repo/image name.
 	K8sCredentialsID	    = 'kubernetes'		    			// KubeConfig credentials ID.    
     }
     
