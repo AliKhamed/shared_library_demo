@@ -37,9 +37,10 @@ pipeline {
         stage('Deploy on k8s Cluster') {
             steps {
                 script { 
-                        // Navigate to the directory contains OpenShift YAML files
+                        // Navigate to the directory contains kubernetes YAML files
                 	dir('k8s') {
-				deployOnKubernetes("${k8sCredentialsID}", "${imageName}")
+				//deployOnKubernetes("${k8sCredentialsID}", "${imageName}")
+				deployOnKubernetes(k8sCredentialsID, imageName)
                     	}
                 }
             }
